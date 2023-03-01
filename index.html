@@ -37,14 +37,15 @@
         const sensor1 = document.getElementById("valorBD");
 
         var valor = ref(db, "sensor1");
-        onValue(valor, (snapshot) => { 
+        
+                onValue(valor, (snapshot) => { 
             valor = JSON.stringify(snapshot.val(), null, 3);
+            if(valor==1){
+                circuloId.style.background = "green";
+            }else{
+                circuloId.style.background = "red";
+            }
         });
-        if(valor=="1"){
-            circuloId.style.background = "green";
-        }else{
-            circuloId.style.background = "red";
-        }
       </script>
     <div class="font-Datail center"> 
         <h1>Sensor 1</h1>
